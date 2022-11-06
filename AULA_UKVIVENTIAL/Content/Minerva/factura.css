@@ -1,0 +1,632 @@
+﻿.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a {
+    color: #5D6975;
+    text-decoration: underline;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    width: 23cm;
+    height: 29.7cm;
+    margin: 0 auto;
+    color: #001028;
+    background: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+header {
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+h1 {
+    border-top: 1px solid #5D6975;
+    border-bottom: 1px solid #5D6975;
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 20px 0;
+    background: url(dimension.png);
+}
+
+/*#logo {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 10px;
+}*/
+
+.logo img {
+    width: 90px;
+}
+
+.log-izquierda {
+    width: 20% !important;
+}
+
+.razon-izquierda {
+    width: 50% !important;
+    text-align: center;
+    /*float: right;*/
+}
+
+.razon-izquierdanc {
+    width: 50% !important;
+    text-align: center;
+    /*float: right;*/
+}
+
+.razon {
+    width: 70%;
+    text-align: center;
+    /*float: right;*/
+}
+
+.razonnc {
+    width: 70% !important;
+}
+
+.correlativo div,
+.razon div {
+    white-space: nowrap;
+}
+
+.correlativo {
+    width: calc(50% - 2px) !important;
+    text-align: center;
+    border: 1px solid black;
+    /*float: left;*/
+}
+
+    .correlativo span {
+        color: #5D6975;
+        text-align: right;
+        width: 52px;
+        margin-right: 10px;
+        display: inline-block;
+        font-size: 0.8em;
+    }
+
+.correlativonc-izq {
+    width: calc(30% - 2px) !important;
+}
+
+.correlativonc {
+    width: calc(30% - 2px) !important;
+}
+
+.logo, .razon, .correlativo {
+    float: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+    table th,
+    table td {
+        text-align: center;
+    }
+
+    table th {
+        padding: 5px 20px;
+        color: #5D6975;
+        border-bottom: 1px solid #C1CED9;
+        white-space: nowrap;
+        font-weight: normal;
+    }
+
+    table .service,
+    table .desc {
+        text-align: left;
+    }
+
+    table td {
+        padding: 5px;
+    }
+
+        table td.service,
+        table td.desc {
+            vertical-align: top;
+        }
+
+        table td.unit,
+        table td.qty,
+        table td.total {
+            font-size: 1.2em;
+        }
+
+        table td.grand {
+            border-top: 1px solid #5D6975;
+        }
+
+#notices .notice {
+    color: #5D6975;
+    font-size: 1.2em;
+}
+
+footer {
+    color: #5D6975;
+    width: 23cm;
+    height: 30px;
+    border-top: 1px solid #C1CED9;
+    padding: 8px 0;
+    text-align: center;
+}
+
+/*Roxana*/
+table.table, table.table td {
+    border: 1px solid #585858;
+}
+
+.table-detalle {
+    margin-bottom: 0;
+}
+
+.thead {
+    background: white !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*.logo {
+    width: 30%;
+    text-align: center
+}*/
+
+/*.razon {
+    width: 70%;
+    text-align: left;
+}
+
+.correlativo {
+    width: calc(30%;
+}*/
+
+.correlativo-div {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+    .correlativo-div p {
+        margin: 10px 0;
+    }
+
+p {
+    font-size: 15px;
+    color: #000000;
+}
+
+.titulo {
+    background: #585858;
+    color: white;
+    text-align: left;
+    border: 1px solid black !important;
+}
+
+.subTitulo {
+    background: #BDBDBD;
+    color: black;
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.footer {
+    margin: 0;
+    color: black;
+    font-size: 12px;
+}
+
+.qr {
+    width: 15%;
+    vertical-align: central;
+}
+
+.token {
+    width: 45%;
+}
+
+.pie {
+    width: 40%;
+}
+
+.img {
+    height: 135px;
+    max-width: 80%;
+}
+
+.img1 {
+    height: 90px;
+    max-width: 80%;
+}
+
+.img2 {
+    height: 135px;
+    max-width: 80%;
+}
+
+h2 {
+    margin: 5px;
+    font-size: 20px;
+}
+
+#tbDetalleEquipo tbody tr td:nth-child(1) {
+    width: 250px !important;
+}
+
+#tbCliente tbody tr td:nth-child(1) {
+    width: 120px !important;
+}
+
+#tbCliente tbody tr td:nth-child(3) {
+    width: 120px !important;
+}
+
+#tbCliente tbody tr td:nth-child(4) {
+    width: 120px !important;
+}
+
+#tbCliente tbody tr td:nth-child(5) {
+    width: 140px !important;
+}
+
+
+#tbDetalles tbody tr td:nth-child(1),
+#tbDetalles tbody tr td:nth-child(2),
+#tbDetalles tbody tr td:nth-child(4),
+#tbDetalles tbody tr td:nth-child(5),
+#tbDetalles tbody tr td:nth-child(6),
+#tbDetalles tbody tr td:nth-child(7) {
+    width: 100px !important;
+}
+
+#tbResumen tbody tr td:nth-child(1),
+#tbResumen tbody tr td:nth-child(2),
+#tbResumen tbody tr td:nth-child(3),
+#tbResumen tbody tr td:nth-child(4),
+#tbResumen tbody tr td:nth-child(5),
+#tbResumen tbody tr td:nth-child(6),
+#tbResumen tbody tr td:nth-child(7),
+#tbResumen tbody tr td:nth-child(8) {
+    width: 12.5% !important;
+}
+
+#tbEfectivo tbody tr td:nth-child(1) {
+    width: 12.5% !important;
+}
+
+#tbEfectivo tbody tr td:nth-child(3) {
+    width: 12.5% !important;
+}
+
+#tbEfectivo tbody tr td:nth-child(4) {
+    width: 12.5% !important;
+}
+
+#tbGuiaRemision tbody tr td:nth-child(1) {
+    width: 140px !important;
+}
+
+#tbGuiaRemision tbody tr td:nth-child(3) {
+    width: 120px !important;
+}
+
+#tbGuiaRemision tbody tr td:nth-child(4) {
+    width: 140px !important;
+}
+
+
+#tbDatosBus tbody tr td:nth-child(1) {
+    width: 100px !important;
+}
+
+#tbDatosBus tbody tr td:nth-child(3) {
+    width: 120px !important;
+}
+
+#tbDatosBus tbody tr td:nth-child(4) {
+    width: 140px !important;
+}
+
+#tbPiePagina tbody tr td:nth-child(1) {
+    width: 50% !important;
+    text-align: left !important;
+}
+
+#tbPiePagina tbody tr td:nth-child(2) {
+    width: 50% !important;
+    text-align: right !important;
+}
+
+
+/* Reportes de Buses */
+
+.Titulo-Reporte {
+    text-decoration: underline !important;
+}
+
+#tbReporteManifiestoCabecera tbody tr td:nth-child(1),
+#tbReporteManifiestoCabecera tbody tr td:nth-child(3),
+#tbReporteManifiestoCabecera tbody tr td:nth-child(4),
+#tbReporteManifiestoCabecera tbody tr td:nth-child(5),
+#tbReporteManifiestoCabecera tbody tr td:nth-child(6),
+#tbReporteManifiestoCabecera tbody tr td:nth-child(7),
+#tbReporteManifiestoCabecera tbody tr td:nth-child(8) {
+    width: 100px !important;
+}
+
+#tbReporteManifiesto tbody tr td:nth-child(3) {
+    width: 80px !important;
+}
+
+#tbReporteManifiesto tbody tr td:nth-child(2),
+#tbReporteManifiesto tbody tr td:nth-child(5),
+#tbReporteManifiesto tbody tr td:nth-child(7) {
+    width: 100px !important;
+}
+
+#tbReporteManifiesto tbody tr td:nth-child(4),
+#tbReporteManifiesto tbody tr td:nth-child(6),
+#tbReporteManifiesto tbody tr td:nth-child(8) {
+    width: 50px !important;
+    text-align: center;
+}
+
+#tbReporteManifiesto tbody tr td:nth-child(1),
+#tbReporteManifiesto tbody tr td:nth-child(2),
+#tbReporteManifiesto tbody tr td:nth-child(3),
+#tbReporteManifiesto tbody tr td:nth-child(5),
+#tbReporteManifiesto tbody tr td:nth-child(7) {
+    text-align: left;
+}
+
+#tbReporteManifiestoCabeceraE tbody tr td:nth-child(1),
+#tbReporteManifiestoCabeceraE tbody tr td:nth-child(3),
+#tbReporteManifiestoCabeceraE tbody tr td:nth-child(5),
+#tbReporteManifiestoCabeceraE tbody tr td:nth-child(11) {
+    width: 60px !important;
+}
+
+
+#tbReporteManifiestoCabeceraE tbody tr td:nth-child(7),
+#tbReporteManifiestoCabeceraE tbody tr td:nth-child(9) {
+    width: 100px !important;
+}
+
+#tbReporteManifiestoE tbody tr td:nth-child(1),
+#tbReporteManifiestoE tbody tr td:nth-child(5) {
+    width: 40px !important;
+}
+
+#tbReporteManifiestoE tbody tr td:nth-child(3),
+#tbReporteManifiestoE tbody tr td:nth-child(4),
+#tbReporteManifiestoE tbody tr td:nth-child(6) {
+    width: 70px !important;
+}
+
+#tbReporteManifiestoE tbody tr td:nth-child(10),
+#tbReporteManifiestoE tbody tr td:nth-child(11),
+#tbReporteManifiestoE tbody tr td:nth-child(12) {
+    width: 80px !important;
+}
+
+#tbPasajexBus tbody tr td:nth-child(1),
+#tbPasajexBus tbody tr td:nth-child(2) {
+    width: 10% !important;
+}
+
+#tbPasajexBus tbody tr td:nth-child(5) {
+    width: 13% !important;
+}
+
+#tbPasajexBus tbody tr td:nth-child(4),
+#tbPasajexBus tbody tr td:nth-child(6),
+#tbPasajexBus tbody tr td:nth-child(7) {
+    width: 7% !important;
+}
+
+#tbFirma {
+    border: 0px !important;
+    border-collapse: collapse !important;
+    width: 300px !important;
+}
+
+    #tbFirma.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+#tbFirmaOC {
+    border: 0px !important;
+    border-collapse: collapse !important;
+    width: 850px !important;
+}
+
+    #tbFirmaOC.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+#tbReporteReciboCajaCabecera tbody tr td:nth-child(1),
+#tbReporteReciboCajaCabecera tbody tr td:nth-child(3),
+#tbReporteReciboCajaCabecera tbody tr td:nth-child(7) {
+    width: 90px !important;
+}
+
+#tbReporteReciboCajaCabecera tbody tr td:nth-child(5) {
+    width: 100px !important;
+}
+
+#tbReporteReciboCajaDetalle tbody tr td:nth-child(1),
+#tbReporteReciboCajaDetalle tbody tr td:nth-child(2) {
+    width: 10% !important;
+}
+
+#tbReporteReciboCajaDetalle tbody tr td:nth-child(4) {
+    width: 13% !important;
+}
+
+#tbReporteReciboCajaDetalle tbody tr td:nth-child(5) {
+    width: 5% !important;
+}
+
+#tbReporteReciboCajaDetalle tbody tr td:nth-child(6),
+#tbReporteReciboCajaDetalle tbody tr td:nth-child(7) {
+    width: 9% !important;
+}
+
+#tbResumenCompra tbody tr td:nth-child(1),
+#tbResumenCompra tbody tr td:nth-child(2),
+#tbResumenCompra tbody tr td:nth-child(3),
+#tbResumenCompra tbody tr td:nth-child(4),
+#tbResumenCompra tbody tr td:nth-child(5),
+#tbResumenCompra tbody tr td:nth-child(6),
+#tbResumenCompra tbody tr td:nth-child(7),
+#tbResumenCompra tbody tr td:nth-child(8),
+#tbResumenCompra tbody tr td:nth-child(9),
+#tbResumenCompra tbody tr td:nth-child(10) {
+    width: 10% !important;
+}
+
+#tbReporteCheckoutCabeceraHab tbody tr td:nth-child(3),
+#tbReporteCheckoutCabeceraHab tbody tr td:nth-child(5),
+#tbReporteCheckoutCabeceraHab tbody tr td:nth-child(7) {
+    width: 88px !important;
+}
+
+#tbReporteCheckoutCabeceraHab tbody tr td:nth-child(1) {
+    width: 94px !important;
+}
+
+#tbReporteCheckoutCabeceraHab tbody tr td:nth-child(9) {
+    width: 110px !important;
+}
+
+#tbReporteCheckoutDatosHuesped tbody tr td:nth-child(1),
+#tbReporteCheckoutDatosHuesped tbody tr td:nth-child(3) {
+    width: 100px !important;
+}
+
+#tbReporteCheckoutDatosHuesped tbody tr td:nth-child(4) {
+    width: 160px !important;
+}
+
+#tbReporteCheckoutDatosHuespedJuridico tbody tr td:nth-child(1) {
+    width: 100px !important;
+}
+
+#tbReporteCheckoutDatosConsumo tbody tr td:nth-child(1),
+#tbReporteCheckoutDatosConsumo tbody tr td:nth-child(2),
+#tbReporteCheckoutDatosConsumo tbody tr td:nth-child(3),
+#tbReporteCheckoutDatosConsumo tbody tr td:nth-child(5),
+#tbReporteCheckoutDatosConsumo tbody tr td:nth-child(6),
+#tbReporteCheckoutDatosConsumo tbody tr td:nth-child(7) {
+    width: 90px !important;
+}
+
+#tbReporteCheckoutDatosFacturar tbody tr td:nth-child(1),
+#tbReporteCheckoutDatosFacturar tbody tr td:nth-child(2),
+#tbReporteCheckoutDatosFacturar tbody tr td:nth-child(4),
+#tbReporteCheckoutDatosFacturar tbody tr td:nth-child(5) {
+    width: 90px !important;
+}
+
+#tbReporteClienteReserva tbody tr td:nth-child(1) {
+    width: 120px !important;
+}
+
+#tbReporteClienteReserva tbody tr td:nth-child(4),
+#tbReporteClienteReserva tbody tr td:nth-child(5) {
+    width: 90px !important;
+}
+
+#tbReporteDatosReserva tbody tr td:nth-child(1) {
+    width: 120px !important;
+}
+
+#tbReporteDatosReserva tbody tr td:nth-child(3),
+#tbReporteDatosReserva tbody tr td:nth-child(4),
+#tbReporteDatosReserva tbody tr td:nth-child(5) {
+    width: 90px !important;
+}
+
+#tbReporteConsolidadoE tbody tr td:nth-child(1) {
+    width: 60px !important;
+}
+
+#tbReporteConsolidadoE tbody tr td:nth-child(2) {
+    width: 80px !important;
+}
+
+#tbReporteConsolidadoE tbody tr td:nth-child(3) {
+    width: 100px !important;
+}
+
+#tbReporteConsolidadoE tbody tr td:nth-child(7),
+#tbReporteConsolidadoE tbody tr td:nth-child(8),
+#tbReporteConsolidadoE tbody tr td:nth-child(9) {
+    width: 50px !important;
+}
+
+#tbCuota {
+    width: 327px !important;
+}
+
+    #tbCuota tbody tr td:nth-child(1) {
+        width: 207px !important;
+    }
+
+#tbDetalleCuota {
+    width: 400px !important;
+}
+
+#tbDetallesND tbody tr td:nth-child(1),
+#tbDetallesND tbody tr td:nth-child(3),
+#tbDetallesND tbody tr td:nth-child(5) {
+    width: 80px !important;
+}
+
+
+#tbDetallesND tbody tr td:nth-child(2) {
+    width: 120px !important;
+}
+
+.footer-public {
+    margin: 0;
+    color: black;
+    font-size: 11px;
+}
+
+.fontsize13 {
+    font-size: 13px;
+}
+
+.fontsize15 {
+    font-size: 15px;
+}

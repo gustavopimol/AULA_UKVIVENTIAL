@@ -1,0 +1,387 @@
+﻿
+@using AULA_UKVIVENTIAL.ViewModels;
+@model  List<AULA_UKVIVENTIAL.ViewModels.AlumnoVM>
+
+
+@{
+    ViewBag.Title = "Alumnos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //DateTime FecharMod = (DateTime)ViewBag.FechaBer;
+
+}
+
+@section styles
+{
+    @*<link rel="stylesheet" href="~/Content/components/easy-autocomplete/easy-autocomplete.min.css">*@
+    @*<link href="~/Content/adminlte/source/css/bootstrap4-toggle.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+}
+<!-- Page Header-->
+<div class="page-header">
+    <h1 class="page-heading">ALUMNO</h1><br />
+    <div class="">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-2" id="fechini">
+                        <label>&nbsp;Desde: &nbsp;</label>
+                        <input type="date" id="txtFechCrD" class="form-control" name="FechCrD" value="@DateTime.Now.Date.ToString("yyyy-MM-dd")">
+                    </div>
+                    <div class="col-2" id="fechfin">
+                        <label>&nbsp;Hasta: &nbsp;</label>
+                        <input type="date" id="txtFechCrH" class="form-control" name="FechCrH" value="@DateTime.Now.Date.ToString("yyyy-MM-dd")">
+                    </div>
+                    <div class="col-2" id="docu">
+                        <label for="cboDocu">&nbsp;Dni: &nbsp;</label>
+                        <input class="form-control" type="text" id="txtDocu" name="Docu" autocomplete="off" style="text-align: center" onkeypress="return valideKey2(event)" placeholder="Escriba el DNI">
+                    </div>
+                    <div class="col-2" id="nombresA">
+                        <label for="cboNombresAlumno">&nbsp;Alumno: &nbsp;</label>
+                        <input class="form-control" type="text" id="txtNombresAlumno" name="NombresAlumno" autocomplete="off" placeholder="Escriba al Alumno">
+                    </div>
+                    <div class="col-2" id="sed">
+                        <label for="">&nbsp;Sede: &nbsp;</label>
+                        <select class="form-control" id="sedes" name="IdSede" required>
+                            <option value="" style="text-align: center">-- Sedes --</option>
+                            @foreach (var sede in ViewBag.Sedes)
+                            {
+                                <option value="@sede.IdSede" @((Convert.ToInt32(Session["IdSede"]) == sede.IdSede) ? "selected" : "")>@sede.Nombre</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-success" style="margin-top: 21px; width: 150px;" id="btnFiltrar"><i class="fa fa-filter"></i> Filtrar Alumno</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<section>
+    <div class="col-lg-12">
+        <div class="card mb-4">
+            <div class="card-header ">
+                <div class="card-heading">Alumnos Registrados</div><br />
+                <div class="pull-right">
+                    <input type="hidden" name="name" value="@Session["Rol"].ToString()" id="txtrol" />
+                    <a class="btn btn-primary" data-bs-target="#nuevoAlumno" id="btnnuevoAlumno" data-bs-toggle="modal"><i class="fa fa-user"></i>&nbsp;Nuevo Alumno</a>
+                    <a href="@Url.Action("ImportarAlumno")" class="btn btn-success"><i class="fa fa-file-excel"></i>&nbsp;Importar al Excel</a>
+                    @*<a href="#" id="btnSelectFile">Seleccionar archivo</a>*@
+                    @*<div class="file-select" name="src-file1">
+                            <input type="file" id="btnimportarExcel" name="src-file1" aria-label="Archivo">
+                        </div>*@
+                    @*<a class="btn btn-primary" data-bs-target="#importarExcel" id="btnimportarExcel" data-bs-toggle="modal"> Nuevo Alumno</a>*@
+                </div>
+            </div>
+            <div class="card-body text-muted">
+                <table id="alumnoTable" class="table table-hover mb-0">
+                    <thead>
+                        <tr align="center">
+                            <th hidden>#</th>
+                            <th class="big-col">Nombres</th>
+                            <th class="big-col">Apellidos</th>
+                            <th class="big-col">Tipo</th>
+                            <th class="big-col">Documento</th>
+                            <th class="big-col">Fecha Nacimiento</th>
+                            <th class="big-col">Direccion</th>
+                            <th class="big-col">Ubigeo</th>
+                            <th class="big-col">Teléfono</th>
+                            <th class="big-col">Email</th>
+                            <th class="big-col">Sede</th>
+                            <th class="big-col">Promotor</th>
+                            <th class="big-col">Fecha Creación</th>
+                            <th class="big-col">Creador</th>
+                            <th class="big-col">Fecha Modificación</th>
+                            <th class="big-col">Modificador</th>
+                            <th class="big-col">&nbsp</th>
+                            <th class="big-col">&nbsp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - Guardar y Editar -->
+    <div class="modal fade text-start" id="nuevoAlumno" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0 bg-gray-100">
+                    <h3 class="h5 text-uppercase modal-title">Datos del Alumno</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioAlumno" class="needs-validation" novalidate="">
+                        @Html.AntiForgeryToken()
+                        <input type="text" name="Id" id="Id" />
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="mb-3">
+                                    <label>Código: </label>
+                                    <input class="form-control" type="text" id="txtIdAlumno" name=" IdAlumno" autocomplete="off" readonly style="text-align: center">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label for="cboTipo">Tipo: </label>
+                                    <select class="form-control" id="cboTipo" name="Tipo" onchange="modificarTexbox()" required>
+                                        <option value="" style="text-align: center">-- Seleccionar un Tipo de Documento --</option>
+                                        <option value="Documento de Identidad (DNI)">Documento de Identidad (DNI)</option>
+                                        <option value="Carnet de Extranjería">Carnet de Extranjería</option>
+                                        <option value="Permiso Temporal de Permanencia (PTP)">Permiso Temporal de Permanencia (PTP)</option>
+                                        <option value="Pasaporte">Pasaporte</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <label>Documento: </label>
+                                <div class=" input-group mb-3">
+
+                                    <input class="form-control" type="text" id="txtDni" name="Dni" autocomplete="off" required onkeypress="return valideKey2(event)" disabled>
+                                    <button class="btn btn-info" id="btnLoadingDNI" type="button" hidden><span class="fas fa-search"></span></button>
+                                    <div class="invalid-feedback">Ingresar tipo.</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="mb-3">
+                                    <label>Nombres: </label>
+                                    <input type="text" id="txtNombres" class="form-control" name="Nombres" autocomplete="off" required>
+                                    <div class="invalid-feedback">Ingresar nombres.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="mb-3">
+                                    <label>Apellido Paterno: </label>
+                                    <input type="text" id="txtAPaterno" class="form-control" name="APaterno" autocomplete="off" required>
+                                    <div class="invalid-feedback">Ingresar apellido paterno.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="mb-3">
+                                    <label>Apellido Materno: </label>
+                                    <input type="text" id="txtAMaterno" class="form-control" name="AMaterno" autocomplete="off" required>
+                                    <div class="invalid-feedback">Ingresar apellido materno.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="mb-3">
+                                    <label>Fecha de Nacimiento: </label>
+                                    <input type="date" id="txtFechaNac" class="form-control" name="FechaNac" @*value="@FecharNac.ToString("yyyy-MM-dd")"*@ required>
+                                    <div class="invalid-feedback">Ingresar fecha de nacimiento.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label>Dirección: </label>
+                                    <input type="text" id="txtDireccion" class="form-control" name="Direccion" autocomplete="off" required>
+                                    <div class="invalid-feedback">Ingresar direccion.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label>Teléfono: </label>
+                                    <input type="text" id="txtTelefono" class="form-control" name="Teléfono" autocomplete="off" required>
+                                    <div class="invalid-feedback">Ingresar teléfono.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="mostrarDepartamento">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label>Email: </label>
+                                        <input type="text" id="txtEmail" class="form-control" name="Email" autocomplete="off" required>
+                                        <div class="invalid-feedback">Ingresar email.</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="cboPais">País: </label>
+                                        <select class="form-control" id="cboPais" name="IdPais" required>
+                                            @foreach (var pais in ViewBag.Paises)
+                                            {
+                                                <option value="@pais.IdPais" @(("Perú" == pais.Descripcion) ? "selected" : "")>@pais.Descripcion</option>
+                                            }
+                                        </select>
+                                        <div class="invalid-feedback">Seleccione un País porfavor.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="cboDepartamento">Departamento: </label>
+                                        <select class="form-control" id="cboDepartamento" name="IdDepartamento" required>
+                                            <option value=" " style="text-align: center">-- Seleccionar un Departamento --</option>
+                                            @*@foreach (var departamento in ViewBag.Departamentos)
+                                                {
+                                                    <option value="@departamento.IdDepartamento" @((departamento.Nombre) ? "selected" : "")>@departamento.Nombre</option>
+                                                }*@
+                                        </select>
+                                        <div class="invalid-feedback">Seleccione un Departamento porfavor.</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="cboProvincia">Provincia: </label>
+                                        <select class="form-control" id="cboProvincia" name="IdProvincia" required>
+                                            <option value="" style="text-align: center">-- Seleccionar una Provincia --</option>
+                                            @*@foreach (var provincia in ViewBag.Provincias)
+                                                {
+                                                    <option value="@provincia.IdProvincia" @((provincia.Nombre) ? "selected" : "")>@provincia.Nombre</option>
+                                                }*@
+                                        </select>
+                                        <div class="invalid-feedback">Seleccione una Provincia porfavor.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="mb-3">
+                                        <label>Ubigeo: </label>
+                                        <input type="text" id="txtUbigeo" class="form-control" name="Ubigeo" autocomplete="off" onkeypress="return valideKey2(event)" required disabled>
+                                        <div class="invalid-feedback">Ingresar ubigeo.</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label for="cboSede">Sede: </label>
+                                        <select class="form-control" id="cboSede" name="IdSede" required>
+                                            <option value="" style="text-align: center">-- Seleccionar una Sede --</option>
+                                        </select>
+                                        <div class="invalid-feedback">Ingresar sede.</div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for="cboSede">Promotor: </label>
+                                        <select class="form-control" id="cboPromotor" name="IdPromotor" required>
+                                            <option value="" style="text-align: center">-- Seleccionar un Promotor --</option>
+                                        </select>
+                                        <div class="invalid-feedback">Ingresar promotor.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="Registrado" id="txtRegistrado" value="@Session["UserNombres"] @Session["UserApellidoP"] @Session["UserApellidoM"]" />
+                        <input type="hidden" name="Modificado" id="txtModificado" value="" />
+                        <input type="hidden" name="FechaMod" id="txtFechaMod" value="" />
+                    </form>
+                </div>
+                <div class="modal-footer border-0 bg-gray-100">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-primary" type="submit" id="btnCrearAlumno">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificación - Error -->
+        <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+            <div class="toast hide" id="existe" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <span class="dot bg-danger me-2"></span>
+                    <div class="card-heading text-dark me-auto">ERROR</div><small>justo ahora</small>
+                    <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body text-muted" id="existe1">Este alumno ya existe.</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal - Confirmar Eliminar -->
+    <div class="modal fade text-start" id="confeliminar" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-0 bg-gray-100">
+                    <h4 class="h5 text-uppercase modal-title">Eliminar Alumno</h4>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioAlumnoEl" class="needs-validation" novalidate="">
+                        @Html.AntiForgeryToken()
+                        <input class="form-control" type="hidden" id="txtDni-d" name="Dni" autocomplete="off" disabled>
+                        <div class="form-group">
+                            <label class="control-label">Usuario: </label>
+                            <input type="text" id="txtUusuarioConf" name="usuario" class="form-control" required>
+                            <div class="invalid-feedback">Ingresar usuario.</div>
+                        </div><br />
+                        <div class="form-group">
+                            <label class="control-label">Contraseña: </label>
+                            <input type="password" id="txtPasswordUserCC" name="password" class="form-control" required>
+                            <div class="invalid-feedback">Ingresar contraseña.</div>
+                        </div>
+                        <input type="hidden" name="pass" id="txtpass" value="@Session["Password"] " />
+                    </form>
+                </div>
+                <div class="modal-footer border-0 bg-gray-100">
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cerrar</button>
+                    <button class="btn btn-danger" type="submit" id="btnCofEliminarAlumno">Eliminar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Notificación - Éxito -->
+    <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+        <div class="toast hide" id="crear" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span class="dot bg-success me-2"></span>
+                <div class="card-heading text-dark me-auto">ÉXITO </div><small>justo ahora</small>
+                <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-muted" id="crear1">Acción completada exitosamente.</div>
+        </div>
+        <div class="toast hide" id="editar" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span class="dot bg-success me-2"></span>
+                <div class="card-heading text-dark me-auto">ÉXITO </div><small>justo ahora</small>
+                <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-muted" id="editar1">Acción completada exitosamente.</div>
+        </div>
+        <div class="toast hide" id="eliminar" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span class="dot bg-success me-2"></span>
+                <div class="card-heading text-dark me-auto">ÉXITO </div><small>justo ahora</small>
+                <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-muted" id="eliminar1">Acción completada exitosamente.</div>
+        </div>
+        <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+            <div class="toast hide" id="error" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <span class="dot bg-danger me-2"></span>
+                    <div class="card-heading text-dark me-auto">ERROR</div><small>justo ahora</small>
+                    <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body text-muted" id="error1">No se puede eliminar alumno, porque existe una matrícula con este alumno.</div>
+            </div>
+        </div>
+        <!-- Notificación - Error -->
+        <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+            <div class="toast hide" id="errorc" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <span class="dot bg-danger me-2"></span>
+                    <div class="card-heading text-dark me-auto">ERROR</div><small>justo ahora</small>
+                    <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body text-muted" id="erroc1">Contraseña incorrecta.</div>
+            </div>
+        </div>
+
+    </div>
+</section>

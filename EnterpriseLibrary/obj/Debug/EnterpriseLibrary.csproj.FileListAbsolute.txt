@@ -1,0 +1,15 @@
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\EnterpriseLibrary.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\EnterpriseLibrary.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Models.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Repository.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Models.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Repository.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\obj\Debug\EnterpriseLibrary.csproj.AssemblyReference.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\obj\Debug\EnterpriseLibrary.csproj.CoreCompileInputs.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\obj\Debug\EnterpriseLibrary.csproj.CopyComplete
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\obj\Debug\EnterpriseLibrary.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\EnterpriseLibrary\obj\Debug\EnterpriseLibrary.pdb

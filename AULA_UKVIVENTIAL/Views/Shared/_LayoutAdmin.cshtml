@@ -1,0 +1,118 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title - Minerva</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <!-- Prism Syntax Highlighting-->
+    <link rel="stylesheet" href="~/Content/distribution/vendor/prismjs/plugins/toolbar/prism-toolbar.css">
+    <link rel="stylesheet" href="~/Content/distribution/vendor/prismjs/themes/prism-okaidia.css">
+    <!-- The Main Theme stylesheet (Contains also Bootstrap CSS)-->
+    <link rel="stylesheet" href="~/Content/distribution/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/Content/distribution/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/Content/distribution/img/Minerva2chiki.png">
+</head>
+<body>
+    <div class="container-fluid px-0 overflow-x-hidden">
+        @RenderBody()
+      <div class="row gx-0 min-vh-100">
+          <div class="col-md-9 col-lg-6 col-xl-4 px-5 d-flex align-items-center shadow">
+              <div class="w-100 py-5">
+                  <div class="text-center">
+                      <img class="img-fluid mb-4" id="ecomoda" src="~/Content/distribution/img/brand/brand-1.svg" alt="..." style="max-width: 6rem;">
+                      <h1 class="h4 text-uppercase mb-5">Bienvenidos a Minerva</h1>
+                  </div>
+    @*<form id="loginForm" class="needs-validation" novalidate="" action="@Url.Action("Ingresar")" method="post">*@
+<form id = "loginForm" class="needs-validation" novalidate=""  action="@Url.Action("Ingresar")" method="post">
+
+@Html.AntiForgeryToken()
+
+<div class="mb-3">
+<label class="form-label">Código Institución</label>
+<input class="form-control" id="txtinstitucion" name="CodigoInstitucion" type="text" autocomplete="off" maxlength="4" value="@((Request.Cookies["Minerva"] != null) ? Request.Cookies["Minerva"]["CodigoInstitucion"] : "")" required">
+<div class="invalid-feedback">Digíte su Código Institución porfavor.</div>
+</div>
+<div class="mb-3">
+<label class="form-label">Nombre de Usuario</label>
+<input class="form-control" name="UserName" type="text" autocomplete="off" value="@((Request.Cookies["Minerva"] != null) ? Request.Cookies["Minerva"]["UserName"] : "")" required>
+<div class="invalid-feedback">Digíte su Nombre de Usuario porfavor.</div>
+</div>
+<div class="mb-4">
+<div class="row">
+<div class="col">
+<label class="form-label">Contraseña</label>
+</div>
+<div class="col-auto"><a class="form-text small text-muted" href="#">¿Olvidaste tú contraseña?</a></div>
+</div>
+<input class="form-control" id="txtps" name="Password" type="password" value="@((Request.Cookies["Minerva"] != null) ? Request.Cookies["Minerva"]["Password"] : "")" required>
+<div class="invalid-feedback">Digíte su Contraseña porfavor.</div>
+</div>
+<div class="form-check mb-4">
+<input class="form-check-input" id="remember" type="checkbox" name="Recordar" @((Request.Cookies["Minerva"] != null) ? " checked" : "")>
+<label class="custom-control-label" for="remember">Recordar mis datos</label>
+</div>
+<!-- Submit-->
+<div class="d-grid mb-5">
+<button class="btn btn-primary text-uppercase" type="submit"  >Sign in</button>
+</div>
+<!-- Link-->
+    @*<p class="text-sm text-muted text-center">
+        ¿No tienes una cuenta? @Html.ActionLink("Regístrate", "Registro", "Home").
+    </p>*@
+        </form>
+    </div>
+            </div>
+            <div class="col-md-3 col-lg-6 col-xl-8 d-none d-md-block">
+                <!-- Image-->
+                <div class="bg-cover h-100 me-n3" id="txtimagen" style="background-image: url(/Content/distribution/img/photos/victor-ene-1301123-unsplash.jpg);"></div>
+            </div>
+        </div>
+
+        <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+            <div class="toast hide" id="liveToast2" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <span class="dot bg-danger me-2"></span>
+                    <div class="card-heading text-dark me-auto">ERROR</div>
+                    <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body text-muted">@TempData["Danger"]</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript files-->
+    <script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="~/Content/distribution/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="~/Content/distribution/js/forms-validation.js"></script>
+    <script src="~/Content/distribution/js/components-notifications.js"></script>
+    <!-- Main Theme JS File-->
+    <script src="~/Content/distribution/js/theme.js"></script>
+    <!-- Prism for syntax highlighting-->
+    <script src="~/Content/distribution/vendor/prismjs/prism.js"></script>
+    <script src="~/Content/distribution/vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="~/Content/distribution/vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="~/Content/distribution/vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="~/Scripts/Minerva/Login.js" type="text/javascript"></script>
+
+    <script>
+        var objLogin;
+        $(document).ready(function () {
+            obLogin = new LoginVD();
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,364 @@
+﻿
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    width: 8cm;
+    height: 29.7cm;
+    color: #000000;
+    background: #FFFFFF;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    /*font-family: Arial, sans-serif;*/
+    font-size: 14px;
+    /*font-family: Courier New;*/
+}
+
+header {
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+h1 {
+    border-top: 1px solid #5D6975;
+    border-bottom: 1px solid #5D6975;
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 20px 0;
+    background: url(dimension.png);
+}
+
+h2 {
+    margin: 2px;
+    font-size: 16px;
+}
+
+#logo {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+    #logo img {
+        width: 90px;
+    }
+
+#razon {
+    width: 40%;
+    text-align: center;
+    /*float: right;*/
+}
+
+    #correlativo div,
+    #razon div {
+        white-space: nowrap;
+    }
+
+#correlativo {
+    width: calc(40% - 2px);
+    text-align: center;
+    border: 1px solid black;
+    /*float: left;*/
+}
+
+    #correlativo span {
+        color: #000000;
+        text-align: right;
+        width: 52px;
+        margin-right: 10px;
+        display: inline-block;
+        font-size: 14px;
+        /*font-size: 0.8em;*/
+    }
+
+#logo, #razon, #correlativo {
+    float: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 10px;
+}
+
+    table th,
+    table td {
+        text-align: center;
+    }
+
+    table th {
+        padding: 5px 20px;
+        color: #000000;
+        border-bottom: 1px solid #C1CED9;
+        white-space: nowrap;
+        font-weight: normal;
+    }
+
+    table .service,
+    table .desc {
+        text-align: left;
+    }
+
+    table td {
+        padding: -3px;
+    }
+
+        table td.service,
+        table td.desc {
+            vertical-align: top;
+        }
+
+        table td.unit,
+        table td.qty,
+        table td.total {
+            /*font-size: 1.2em;*/
+            font-size: 14px;
+        }
+
+        table td.grand {
+            border-top: 1px solid #5D6975;
+        }
+
+#notices .notice {
+    /*color: #5D6975;*/
+    color: #000000;
+    font-size: 14px;
+    /*font-size: 1.2em;*/
+}
+
+footer {
+    /*color: #5D6975;*/
+    color: #000000;
+    width: 8cm;
+    height: 30px;
+    bottom: 0;
+    border-top: 1px solid #C1CED9;
+    padding: 8px 0;
+    text-align: center;
+}
+
+/*Roxana*/
+table.table, table.table td {
+    /*border: 1px solid #585858;*/
+    font-size: 14px;
+}
+
+.table-detalle {
+    margin-bottom: 0;
+}
+
+    .table-detalle tbody tr td:nth-child(1) {
+        width: 65%;
+    }
+
+    .table-detalle tbody tr td:nth-child(2) {
+        width: 35%;
+    }
+
+.thead {
+    background: white !important;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.logo {
+    width: 30%;
+    text-align: center
+}
+
+.razon {
+    width: 40%;
+    text-align: left;
+}
+
+.correlativo {
+    width: 30%;
+}
+
+.correlativo-div {
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+    .correlativo-div p {
+        margin: 2px 0;
+    }
+
+p {
+    font-size: 15px;
+    color: #000000;
+}
+
+.titulo {
+    color: black;
+    text-align: left;
+    border-bottom: 1px solid black !important;
+    border-top: 1px solid black !important;
+    /*border: 1px solid black !important;*/
+}
+
+.titulo-info {
+    border: 0 !important;
+    border-bottom: 1px solid black !important;
+}
+
+.subTitulo {
+    color: black;
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.footer {
+    margin: 0;
+    color: black;
+    font-size: 11px;
+}
+
+.qr {
+    width: 50%;
+    vertical-align: central;
+}
+
+.token {
+    width: 50%;
+}
+
+.img {
+    height: 100px;
+    max-width: 97%;
+}
+
+table tbody tr.table-items td {
+    /*border-bottom: 3px double black !important;*/
+}
+
+table tbody tr.table-items:last-child td {
+    border-bottom: 1px solid black !important;
+}
+
+/*.table-productos tbody tr:nth-child(odd) td {
+    border-bottom: 1px dashed black;
+}*/
+
+/*.table-productos tbody tr:nth-child(even) td {
+    border-bottom: 1px solid black;
+}*/
+
+hr.separador {
+    border-top: 1px dashed black !important;
+}
+
+.firma-div {
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+    .firma-div p {
+        margin: 5px 0;
+    }
+
+.negrita {
+    font-weight: bold;
+}
+
+.tam-letra-rc {
+    font-size: 13px !important;
+}
+
+.tam-letra-rc-2 {
+    font-size: 12px !important;
+}
+
+.espacio-linea-rc {
+    line-height: 120%;
+}
+
+.titulo-info-rc {
+    border-bottom: 1px dashed black !important;
+}
+
+.correlativo-div-rc {
+    border: 1px dashed black;
+    margin-top: 6px;
+}
+
+    .correlativo-div-rc p {
+        margin: 2px 0px 3px 0px;
+    }
+
+table tbody tr.table-items-rc:last-child td {
+    border-bottom: 1px dashed black !important;
+}
+
+.table-detalle-rc {
+    margin-bottom: 0;
+}
+
+    .table-detalle-rc tbody tr td:nth-child(1),
+    .table-detalle-rc tbody tr td:nth-child(3) {
+        width: 25% !important;
+    }
+
+    .table-detalle-rc tbody tr td:nth-child(2),
+    .table-detalle-rc tbody tr td:nth-child(4) {
+        width: 25% !important;
+    }
+
+.img-rc {
+    height: 70px !important;
+    max-width: 70% !important;
+}
+
+.table-productos-resumen {
+    table-layout: fixed;
+    width: 300px !important;
+}
+
+.tablafija1 {
+    width: 65px !important;
+    word-wrap: break-word;
+}
+
+.tablafija2 {
+    width: 135px !important;
+    word-wrap: break-word;
+}
+
+.tablafija3 {
+    width: 100px !important;
+    word-wrap: break-word;
+}
+
+.footer-public {
+    margin: 0;
+    color: black;
+    font-size: 11px;
+}

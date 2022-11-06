@@ -1,0 +1,6 @@
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Models\bin\Debug\Models.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Models\bin\Debug\Models.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Models\obj\Debug\Models.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Models\obj\Debug\Models.pdb

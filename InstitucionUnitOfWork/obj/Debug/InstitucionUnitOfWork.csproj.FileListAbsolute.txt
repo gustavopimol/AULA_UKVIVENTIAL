@@ -1,0 +1,17 @@
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\InstitucionUnitOfWork.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\InstitucionUnitOfWork.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\EnterpriseLibrary.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Repository.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Models.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\EnterpriseLibrary.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Repository.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Models.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\obj\Debug\InstitucionUnitOfWork.csproj.AssemblyReference.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\obj\Debug\InstitucionUnitOfWork.csproj.CoreCompileInputs.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\obj\Debug\InstitucionUnitOfWork.csproj.CopyComplete
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\obj\Debug\InstitucionUnitOfWork.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\InstitucionUnitOfWork\obj\Debug\InstitucionUnitOfWork.pdb

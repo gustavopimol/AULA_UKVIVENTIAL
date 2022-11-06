@@ -1,0 +1,58 @@
+﻿
+/*.btn-file{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+    .btn-file::before {
+        background-color: #ffc404;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        content: 'Importar Excel';*/ /* testo por defecto */
+        /*position: absolute;
+        left: 0;
+        right: 0;
+        top: -2px;
+        bottom: 0;*/
+        /*cursor: pointer;*/
+    /*}
+
+    .btn-file input[type="file"] {
+        opacity: 0;
+        width: 135px;
+        height: 33px;
+        display: inline-block;
+    }
+
+#src-file1::before {
+    content: 'Seleccionar archivo Excel';
+}
+
+.file-select:hover {*/
+    /*cursor: pointer;*/
+/*}*/
+
+.btn.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn.btn-file > input[type='file'] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 100px;
+        text-align: right;
+        opacity: 0;
+        filter: opacity(0);
+        outline: none;
+        background: white;
+        cursor: inherit;
+        display: block;
+    }

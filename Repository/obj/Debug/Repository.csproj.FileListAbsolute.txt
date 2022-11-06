@@ -1,0 +1,9 @@
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\bin\Debug\Repository.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\bin\Debug\Repository.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\bin\Debug\Models.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\bin\Debug\Models.pdb
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\obj\Debug\Repository.csproj.AssemblyReference.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\obj\Debug\Repository.csproj.CoreCompileInputs.cache
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\obj\Debug\Repository.csproj.CopyComplete
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\obj\Debug\Repository.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\Repository\obj\Debug\Repository.pdb

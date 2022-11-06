@@ -1,0 +1,229 @@
+﻿@*@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}*@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Uk Vivential</title>
+    @*   <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />*@
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <!-- Prism Syntax Highlighting-->
+    <link rel="stylesheet" href="~/Content/distribution/vendor/prismjs/plugins/toolbar/prism-toolbar.css">
+    <link rel="stylesheet" href="~/Content/distribution/vendor/prismjs/themes/prism-okaidia.css">
+    <!-- The Main Theme stylesheet (Contains also Bootstrap CSS)-->
+    <link rel="stylesheet" href="~/Content/distribution/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/Content/distribution/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/Content/distribution/img/uklogopeque.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    @*<link rel="stylesheet" href="~/Content/adminlte/components/font-awesome/css/font-awesome.min.css">*@
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/Content/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="~/Content/Minerva/Global.css">
+
+    @RenderSection("styles", required: false)
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    <!-- CSS Spinner-->
+    <div class="spinner-wrapper" id="animacioncargando">
+        <div class="spinner sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow" style=" border-bottom-width: 0px;">
+            <a class="sidebar-toggler text-gray-500 me-4 me-lg-5 lead" href="#">
+                <i class="fas fa-align-left"></i>
+            </a>
+            <span>
+                @*<img src="~/Content/distribution/img/Logo.png" style="width: 18%;" />*@
+            </span>
+
+            <a class="navbar-brand fw-bold text-uppercase text-base" href="@Url.Action("Index", "Dashboard")">
+                <!-- <span class="d-none d-brand-partial">Uk Vivential</span> -->
+                <img src="~/Content/distribution/img/Logo.png" style="width: 15%; margin-left: 570px; " />
+            </a>
+            <li class="nav-item dropdown me-auto">
+                <a class="nav-link nav-link-icon text-gray-400 px-1" id="notifications" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <svg class="svg-icon svg-icon-md svg-icon-heavy">
+                        <use xlink:href="~/Content/distribution/icons/orion-svg-sprite.svg#sales-up-1" color="blue"> </use>
+                    </svg><span class="notification-badge bg-green"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated text-sm" aria-labelledby="notifications">
+                    <a class="dropdown-item" href="#">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-sm bg-indigo text-white"><i class="fab fa-twitter"></i></div>
+                            <div class="text ms-2">
+                                <p class="mb-0">You have 2 followers</p>
+                            </div>
+                        </div>
+                    </a><a class="dropdown-item" href="#">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-sm bg-green text-white"><i class="fas fa-envelope"></i></div>
+                            <div class="text ms-2">
+                                <p class="mb-0">You have 6 new messages</p>
+                            </div>
+                        </div>
+                    </a><a class="dropdown-item" href="#">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-sm bg-blue text-white"><i class="fas fa-upload"></i></div>
+                            <div class="text ms-2">
+                                <p class="mb-0">Server rebooted</p>
+                            </div>
+                        </div>
+                    </a><a class="dropdown-item" href="#">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-sm bg-indigo text-white"><i class="fab fa-twitter"></i></div>
+                            <div class="text ms-2">
+                                <p class="mb-0">You have 2 followers</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item text-center" href="#"><small class="fw-bold text-uppercase">View all notifications</small></a>
+                </div>
+            </li>
+            <li class="nav-item dropdown ms-auto">
+                <a class="nav-link pe-0" id="userInfo" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="avatar p-1" src="~/Content/distribution/img/avatar-6.jpg" alt="Jason Doe"></a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated" aria-labelledby="userInfo">
+                    <div class="dropdown-header text-gray-700">
+                        <h6 class="text-uppercase font-weight-bold">Mark Stephen</h6><small>Web Developer</small>
+                    </div>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity log</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </li>
+
+
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <div class="sidebar py-2" id="sidebar">
+            <aside class="main-sidebar">
+                <h6 class="sidebar-heading"><span> Uk Vivential </span></h6>
+                <ul class="list-unstyled">
+                    <li class="sidebar-list-item">
+                        <a class="sidebar-link text-muted" href="@Url.Action("Index", "Home")">
+                            <svg class="svg-icon svg-icon-md me-3">
+                                <use xlink:href="~/Content/distribution/icons/orion-svg-sprite.svg#angle-brackets-1"> </use>
+                            </svg><span class="sidebar-link-title">Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a class="sidebar-link text-muted" href="@Url.Action("Index", "Alumno")">
+                            <svg class="svg-icon svg-icon-md me-3">
+                                <use xlink:href="~/Content/distribution/icons/orion-svg-sprite.svg#angle-brackets-1"> </use>
+                            </svg><span class="sidebar-link-title">Alumno</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a class="sidebar-link text-muted" href="">
+                            <svg class="svg-icon svg-icon-md me-3">
+                                <use xlink:href="~/Content/distribution/icons/orion-svg-sprite.svg#angle-brackets-1"> </use>
+                            </svg><span class="sidebar-link-title">Aula</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a class="sidebar-link text-muted" href="">
+                            <svg class="svg-icon svg-icon-md me-3">
+                                <use xlink:href="~/Content/distribution/icons/orion-svg-sprite.svg#angle-brackets-1"> </use>
+                            </svg><span class="sidebar-link-title">Matricula</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a class="sidebar-link text-muted" href="">
+                            <svg class="svg-icon svg-icon-md me-3">
+                                <use xlink:href="~/Content/distribution/icons/orion-svg-sprite.svg#angle-brackets-1"> </use>
+                            </svg><span class="sidebar-link-title">Mantenimiento</span>
+                        </a>
+                        <ul class="sidebar-menu list-unstyled collapse show" id="dashboardsDropdown">
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Concepto")">Concepto</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Curso")">Curso</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Usuario")">Usuarios</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Seccion")">Sección</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Grado")">Grado</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Nivel")">Nivel</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Ciclo")">Tipo Ciclo</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Periodo")">Periodo</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Sede")">Sede</a></li>
+                            <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="@Url.Action("Index", "Docente")">Docente</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </aside>
+        </div>
+        <div class="page-holder bg-gray-100">
+            <div class="container-fluid px-lg-4 px-xl-5">
+                @RenderBody()
+            </div>
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start fw-bold">
+                            <strong>Copyright &copy; @DateTime.Now.Date.ToString("yyyy") <a href="http://resetsoftware.pe/" target="_blank">UK VIVENTIAL</a>.</strong>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end text-gray-400">
+                            <p>Todos los derechos reservados.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="~/Content/distribution/js/components-notifications.js"></script>
+        <script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script src="~/Content/distribution/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+        <script src="~/Content/distribution/vendor/bootstrap/js/forms-validation.js"></script>
+        @*<script src="~/Content/distribution/icons/orion-svg-sprite.svg"></script>*@
+        <!-- Main Theme JS File-->
+        <script src="~/Content/distribution/js/theme.js"></script>
+        <!-- DataTables  & Plugins -->
+        <script src="~/Content/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+        <script src="~/Content/admin/plugins/jszip/jszip.min.js"></script>
+        <script src="~/Content/admin/plugins/pdfmake/pdfmake.min.js"></script>
+        <script src="~/Content/admin/plugins/pdfmake/vfs_fonts.js"></script>
+        <script src="~/Content/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+        <script src="~/Content/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+        <!-- Preloader-->
+        <script src="~/Content/distribution/js/components-preloader.js"></script>
+
+        <!-- Prism for syntax highlighting-->
+        <script src="~/Content/distribution/vendor/prismjs/prism.js"></script>
+        <script src="~/Content/distribution/vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+        <script src="~/Content/distribution/vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+        <script src="~/Content/distribution/vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+
+        @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>*@
+
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>
