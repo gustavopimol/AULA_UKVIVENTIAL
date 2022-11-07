@@ -43,8 +43,13 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="IAlumnoRepository.cs" />
+    <Compile Include="IAulaRepository.cs" />
+    <Compile Include="ICicloRepository.cs" />
+    <Compile Include="ICursosRepository.cs" />
     <Compile Include="IDepartamentoRepository.cs" />
     <Compile Include="IDistritoRepository.cs" />
+    <Compile Include="IDocenteRepository.cs" />
+    <Compile Include="INivelRepository.cs" />
     <Compile Include="IPromotorRepository.cs" />
     <Compile Include="IProvinciaRepository.cs" />
     <Compile Include="ISedeRepository.cs" />

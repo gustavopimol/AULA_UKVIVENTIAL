@@ -42,10 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="Aula.cs" />
+    <Compile Include="Ciclo.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Cursos.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Distrito.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Nivel.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="Promotor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

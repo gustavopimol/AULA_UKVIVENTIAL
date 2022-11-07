@@ -121,12 +121,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlumnoController.cs" />
+    <Compile Include="Controllers\CicloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AlumnoVM.cs" />
+    <Compile Include="ViewModels\CicloVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -149,6 +151,30 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Minerva\Admin.js" />
+    <Content Include="Scripts\Minerva\Alumno.js" />
+    <Content Include="Scripts\Minerva\Aula.js" />
+    <Content Include="Scripts\Minerva\CCobrar.js" />
+    <Content Include="Scripts\Minerva\Ciclo.js" />
+    <Content Include="Scripts\Minerva\Concepto.js" />
+    <Content Include="Scripts\Minerva\Curso.js" />
+    <Content Include="Scripts\Minerva\DElectronico.js" />
+    <Content Include="Scripts\Minerva\DEmitido.js" />
+    <Content Include="Scripts\Minerva\Docente.js" />
+    <Content Include="Scripts\Minerva\Grado.js" />
+    <Content Include="Scripts\Minerva\ListaAlumnos.js" />
+    <Content Include="Scripts\Minerva\Login.js" />
+    <Content Include="Scripts\Minerva\Matricula.js" />
+    <Content Include="Scripts\Minerva\Modulo.js" />
+    <Content Include="Scripts\Minerva\Nivel.js" />
+    <Content Include="Scripts\Minerva\Perfil.js" />
+    <Content Include="Scripts\Minerva\Periodo.js" />
+    <Content Include="Scripts\Minerva\Promotor.js" />
+    <Content Include="Scripts\Minerva\ReciboCaja.js" />
+    <Content Include="Scripts\Minerva\Registro.js" />
+    <Content Include="Scripts\Minerva\Seccion.js" />
+    <Content Include="Scripts\Minerva\Sede.js" />
+    <Content Include="Scripts\Minerva\Usuario.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -167,6 +193,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\Ciclo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
