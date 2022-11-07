@@ -96,3 +96,9 @@ C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENT
 C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\Repository.pdb
 C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
 C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\EPPlus.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\EPPlus.Interfaces.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\EPPlus.System.Drawing.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\EPPlus.xml
+C:\Users\GUSTAVO\Desktop\workspaceVisualMicrosoft\AULA_UKVIVENTIAL\AULA_UKVIVENTIAL\bin\Microsoft.IO.RecyclableMemoryStream.xml

@@ -23,6 +23,7 @@ namespace InstitucionUnitOfWork
                 Ciclos = new CicloRepository();
                 Niveles = new NivelRepository();
                 Cursos = new CursosRepository();
+                Docentes = new DocenteRepository();
         }
             public IDepartamentoRepository Departamentos { get; set; }
             public ICicloRepository Ciclos { get; set; }
@@ -35,6 +36,7 @@ namespace InstitucionUnitOfWork
             public INivelRepository Niveles { get; set; }
             public IAulaRepository Aulas { get; set; }
             public ICursosRepository Cursos { get; set; }
+            public IDocenteRepository Docentes { get; set; }
     }
-    
+
 }

@@ -48,6 +48,7 @@
     <Compile Include="Cursos.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Distrito.cs" />
+    <Compile Include="Docente.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Nivel.cs" />
     <Compile Include="Pais.cs" />

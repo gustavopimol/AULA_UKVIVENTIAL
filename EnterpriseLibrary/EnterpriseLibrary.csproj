@@ -53,6 +53,7 @@
     <Compile Include="CursosRepository.cs" />
     <Compile Include="DepartamentoRepository.cs" />
     <Compile Include="DistritoRepository.cs" />
+    <Compile Include="DocenteRepository.cs" />
     <Compile Include="NivelRepository.cs" />
     <Compile Include="PromotorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
