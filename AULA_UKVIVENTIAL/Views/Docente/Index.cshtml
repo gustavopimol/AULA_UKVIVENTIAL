@@ -1,0 +1,261 @@
+﻿
+@{
+    ViewBag.Title = "Docente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles
+{
+    @Styles.Render("~/Content/Minerva/Docente.css")
+}
+
+<!-- Page Header-->
+<div class="page-header">
+    <h1 class="page-heading">DOCENTES</h1>
+</div>
+<section>
+    <div class="col-lg-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <div class="card-heading">Docentes Registrados</div>
+                <div class="pull-right">
+                    <input type="hidden" name="name" value="@Session["Rol"].ToString()" id="txtrol" />
+                    <a id="btnNuevoDocente" class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#nuevoDocente"><i class="fa fa-user"></i>&nbsp;Nuevo Docente</a>
+                    <a href="@Url.Action("ImportarDocente")" class="btn btn-success"><i class="fa fa-file-excel"></i>&nbsp;Importar al Excel</a>
+                </div>
+            </div>
+            <div class="card-body text-muted">
+                <div class="table-responsive" id="datos">
+                    <table id="docenteTable" class="table table-hover mb-0">
+                        <thead>
+                            <tr align="center">
+                                <!-- <th>Código</th>-->
+                                <th>Dni</th>
+                                <th>Código</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
+                                @*<th>Email</th>
+        <th>Sede</th>*@
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-start" id="nuevoDocente" role="dialog">
+
+        <div class="modal-dialog ">
+
+            <div class="modal-content" style="border-color: #d0e4fc; border-width: 2px;">
+                <div class="modal-header border-0 bg-blue-light">
+                    <h5 class="text-uppercase modal-title">Datos del Docente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate="" id="formularioDocente">
+                        <input type="hidden" name="IdDocente" id="IdDocente" />
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label>Código: </label>
+                                    <input class="form-control" type="text" name="CodigoDocente" id="txtCodigo" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label>Dni: </label>
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" type="text" name="Dni" maxlength="8" onkeypress="return soloNumeros(event)" id="txtDni" required>
+                                        @*<button class="btn btn-info" id="btnLoadingDNI" type="button"><span class="fas fa-search"></span></button>*@
+                                        <div class="invalid-feedback">Digíte su Dni porfavor.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label>Nombres: </label>
+                                    <input class="form-control" type="text" name="Nombres" id="txtNombres" required>
+                                    <div class="invalid-feedback">Digíte sus Nombres porfavor.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label>Apellidos: </label>
+                                    <input class="form-control" type="text" name="Apellidos" id="txtApellidos" required>
+                                    <div class="invalid-feedback">Digíte sus Apellidos porfavor.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label>Dirección: </label>
+                                    <input class="form-control" type="text" name="Direccion" id="txtDireccion" required>
+                                    <div class="invalid-feedback">Digíte su Dirección porfavor.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label>Teléfono: </label>
+                                    <input class="form-control" type="text" name="Telefono" onkeypress="return soloNumeros(event)" id="txtTelefono" required>
+                                    <div class="invalid-feedback">Digíte su Teléfono porfavor.</div>
+                                </div>
+                                @*<div class="mb-3">
+                                    <label>Email: </label>
+                                    <input class="form-control" type="text" name="Email" id="txtEmail" required>
+                                    <div class="invalid-feedback">Digíte su Email porfavor.</div>
+                                </div>*@
+                            </div>
+                        </div>
+                        @*<div class="row">
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label>Sede: </label>
+                                    <select class="form-control" id="cboSede" name="IdSede" style="width:100%;" required>
+                                    </select>
+                                    <div class="invalid-feedback">Seleccione una Sede porfavor.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="mb-3">
+                                    <label>Teléfono: </label>
+                                    <input class="form-control" type="text" name="Telefono" onkeypress="return soloNumeros(event)" id="txtTelefono" required>
+                                    <div class="invalid-feedback">Digíte su Teléfono porfavor.</div>
+                                </div>
+                            </div>
+                        </div>*@
+
+                        <div class="modal-footer border-0 bg-gray-100">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary" id="btnCrearDocente">Guardar</button>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+                <div class="toast hide" id="error" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <span class="dot bg-danger me-2"></span>
+                        <div class="card-heading text-dark me-auto">ERROR</div>
+                        <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body text-muted" id="error2">Este Docente ya existe</div>
+                </div>
+            </div>
+            <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+                <div class="toast hide" id="error3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <span class="dot bg-danger me-2"></span>
+                        <div class="card-heading text-dark me-auto">ERROR</div>
+                        <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body text-muted" id="error4">Numero de Documento Inválido</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="eliminarDocente" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0 bg-red-light">
+                    <h5 class="text-uppercase modal-title">Eliminar Docente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formularioDocenteD" class="form-horizontal">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="IdDocente" id="IdDocente-d" />
+
+                        <div class="form-group">
+                            <div class="col-md-12">¿Está seguro que desea eliminar el item seleccionado?</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0 bg-gray-100">
+                    <button type="button" class="btn btn-danger" id="btnConfEliminarDocente">Eliminar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="toast-container position-fixed z-index-50 bottom-0 end-0 p-3">
+        <div class="toast hide" id="exito" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span class="dot bg-success me-2"></span>
+                <div class="card-heading text-dark me-auto">ÉXITO</div>
+                <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-muted" id="exito2">Docente Creado correctamente</div>
+        </div>
+        <div class="toast hide" id="informa" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span class="dot bg-info me-2"></span>
+                <div class="card-heading text-dark me-auto">INFO</div>
+                <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-muted" id="info">Docente Editado correctamente</div>
+        </div>
+        <div class="toast hide" id="elimina" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <span class="dot bg-info me-2"></span>
+                <div class="card-heading text-dark me-auto">INFO</div>
+                <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-muted" id="elim">Docente Eliminado correctamente</div>
+        </div>
+    </div>
+
+</section>
+
+@section scripts
+{
+    @*<script src="~/Content/distribution/js/forms-validation.js"></script>*@
+    
+    <script src="~/Scripts/Minerva/Docente.js" type="text/javascript"></script>
+    <script>
+        var objDocente;
+        $(document).ready(function () {
+            objDocente = new DocenteVD();
+        });
+
+        function soloNumeros(e) {
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            letras = "0123456789";
+            especiales = "8-37-39-46";
+
+            tecla_especial = false
+            for (var i in especiales) {
+                if (key == especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                }
+            }
+
+            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+                return false;
+            }
+        }
+
+    </script>
+}

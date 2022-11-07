@@ -22,5 +22,6 @@ namespace InstitucionUnitOfWork
         ICursosRepository Cursos { get; set; }
         INivelRepository Niveles { get; set; } 
         IAulaRepository Aulas { get; set; }
+        IDocenteRepository Docentes { get; set; }
     }
 }

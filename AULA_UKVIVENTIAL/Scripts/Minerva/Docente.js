@@ -19,13 +19,13 @@
     ListarDocentes();
 
     function LimpiarDocente() {
-        /*$("#txtCodigo").val("");*/
+       // $("#txtCodigo").val("");
         $("#txtDni").val("");
         $("#txtNombres").val("");
         $("#txtApellidos").val("");
         $("#txtTelefono").val("");
         $("#txtDireccion").val("");
-        $("#txtEmail").val("");
+        /*$("#txtEmail").val("");*/
         //$("#cboDepartamento").empty();
         //$("#cboProvincia").empty();
 
@@ -40,15 +40,15 @@
 
     $("#txtDni").on("keyup", function (e) {
         if (e.which == 13 && $("#txtDni").val().length == 8) {
-            consultarDNI();
+           // consultarDNI();
         }
     });
 
     function consultarDNI() {
         $("#btnLoadingDNI span").removeClass("fa-search").addClass("fa-spinner").addClass("fa-spin");
         $(".alert-modal").remove();
-
-        $.getJSON('/Admin/BuscarReniec', { DNI: $("#txtDni").val() }, function (result) {
+        //tienes el controlador admin? no 
+        $.getJSON('/Docente/BuscarReniec', { DNI: $("#txtDni").val() }, function (result) {
             if (result.success) {
                 if (result.persona != undefined) {
                     if (result.persona.Nombres == "") {
@@ -115,6 +115,9 @@
 
         $("#docenteTable").DataTable().destroy();
         $("#docenteTable tbody").empty();
+        
+        /*.append($("<td class='text-left'>").text(this.Email)) // linea 132
+                        .append($("<td class='text-center'>").text(this.Sede)) // linea 133*/
 
         $.ajax({
             url: '/Docente/Filtrar',
@@ -123,14 +126,13 @@
             success: function (data) {
                 $.each(data, function () {
                     $("#docenteTable tbody").append($("<tr id='docente-" + this.IdDocente + "' data-id='" + this.IdDocente + "'>")
-                        .append($("<td class='text-center'>").text(this.CodigoDocente))
+                        //.append($("<td class='text-center'>").text(this.CodigoDocente))
                         .append($("<td class='text-center'>").text(this.Dni))
+                        .append($("<td class='text-center'>").text(this.CodigoDocente))
                         .append($("<td class='text-left'>").text(this.Nombres))
                         .append($("<td class='text-left'>").text(this.Apellidos))
                         .append($("<td class='text-left'>").text(this.Direccion))
                         .append($("<td class='text-center'>").text(this.Telefono))
-                        .append($("<td class='text-left'>").text(this.Email))
-                        .append($("<td class='text-center'>").text(this.Sede))
                         .append($("<td class='text-center'>")
                             .append($("<a id='btnModificarDocente-" + this.IdDocente + "' data-id='" + this.IdDocente + "' data-estado='" + this.Estado + "' class='btnModificarDocente text-lg text-success'>")
                                 .append($("<i class='far fa-edit'>"))))
@@ -139,8 +141,62 @@
                                 .append($("<i class='far fa-trash-alt'>"))))
                     );
                 });
-                if ($("#txtrol").val() == 'Administrador') {
-                    $("#docenteTable").DataTable({
+                //if ($("#txtrol").val() == 'Administrador') {
+                //    $("#docenteTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["excel", "pdf", "print", "colvis"]
+                //    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Supervisor') {
+                //    $("#docenteTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["excel", "pdf", "print", "colvis"]
+                //    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Partner') {
+                //    $("#docenteTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["colvis"]
+                //    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Partner sin Ventas') {
+                //    $("#docenteTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["colvis"]
+                //    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Profesor') {
+                //    $("#docenteTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["colvis"]
+                //    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
+                //}
+                $("#docenteTable").DataTable({
                         "responsive": true,
                         "lengthChange": true,
                         "autoWidth": false,
@@ -149,52 +205,6 @@
                         "colReorder": true,
                         "buttons": ["excel", "pdf", "print", "colvis"]
                     }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Supervisor') {
-                    $("#docenteTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["excel", "pdf", "print", "colvis"]
-                    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Partner') {
-                    $("#docenteTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["colvis"]
-                    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Partner sin Ventas') {
-                    $("#docenteTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["colvis"]
-                    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Profesor') {
-                    $("#docenteTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["colvis"]
-                    }).buttons().container().appendTo('#docenteTable_wrapper .col-md-6:eq(0)');
-                }
-
                 $("#nuevoDocente").modal("hide");
             },
             //error: function (xhr, textStatus, error) {
@@ -207,12 +217,20 @@
 
     $("#btnCrearDocente").on("click", function () {
         if ($("#txtDni").val().length != 0 && $("#txtNombres").val().length != 0 && $("#txtApellidos").val().length != 0 && $("#txtDireccion").val().length != 0
-            && $("#txtTelefono").val().length != 0 && $("#txtEmail").val().length != 0 && $("#cboSede").val().length != 0 ) {
+            && $("#txtTelefono").val().length != 0 /*&& $("#txtEmail").val().length != 0 && $("#cboSede").val().length != 0 */) {
+
+            var codigo = $("#txtCodigo").val();
+            var Dni = $("#txtDni").val();
+            var Nombres = $("#txtNombres").val();
+            var Apellidos = $("#txtApellidos").val();
+            var Direccion = $("#txtDireccion").val();
+            var Telefono = $("#txtTelefono").val();
 
             if (crearDoc) {
                 $("#btnCrearDocente").attr("disabled", "disabled").html('<span class="fa fa-spinner fa-spin"></span>\u00a0\u00a0 Guardando...');
 
-                $.post('/Docente/CreateDocente', $("#formularioDocente").serialize(), function (result) {
+                $.post('/Docente/CreateDocente', { __RequestVerificationToken: $("input[name=__RequestVerificationToken]").val(), CodigoDocente: codigo, Dni: Dni, Nombres: Nombres, Apellidos: Apellidos, Direccion: Direccion, Telefono: Telefono} , function (result) {
+              // $.post('/Docente/CreateDocente', $("#formularioDocente").serialize(), function (result) {
                     if (result.success) {
                         ListarDocentes();
                         $("#exito").removeClass("hide").addClass("show");
@@ -263,8 +281,8 @@
             $("#txtApellidos").val(data.Apellidos);
             $("#txtDireccion").val(data.Direccion);
             $("#txtTelefono").val(data.Telefono);
-            $("#txtEmail").val(data.Email);
-            $("#cboSede").val(data.IdSede);
+            //$("#txtEmail").val(data.Email);
+            //$("#cboSede").val(data.IdSede);
 
             crearDoc = false;
             $("#btnCrearDocente").text("Guardar Cambios").attr("class", "btn btn-warning");
@@ -358,8 +376,8 @@
                             .append($("<td class='text-center'>").text(this.Apellidos))
                             .append($("<td class='text-center'>").text(this.Direccion))
                             .append($("<td class='text-center'>").text(this.Telefono))
-                            .append($("<td class='text-center'>").text(this.Email))
-                            .append($("<td class='text-center'>").text(this.Sede))
+                            //.append($("<td class='text-center'>").text(this.Email))
+                            //.append($("<td class='text-center'>").text(this.Sede))
                         );
                     });
 
