@@ -48,8 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoRepository.cs" />
+    <Compile Include="AulaRepository.cs" />
+    <Compile Include="CicloRepository.cs" />
+    <Compile Include="CursosRepository.cs" />
     <Compile Include="DepartamentoRepository.cs" />
     <Compile Include="DistritoRepository.cs" />
+    <Compile Include="NivelRepository.cs" />
     <Compile Include="PromotorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinciaRepository.cs" />

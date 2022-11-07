@@ -20,14 +20,21 @@ namespace InstitucionUnitOfWork
                 Provincias = new ProvinciaRepository();
                 Distritos = new DistritoRepository();
                 Promotores = new PromotorRepository();
-            }
+                Ciclos = new CicloRepository();
+                Niveles = new NivelRepository();
+                Cursos = new CursosRepository();
+        }
             public IDepartamentoRepository Departamentos { get; set; }
+            public ICicloRepository Ciclos { get; set; }
             public IProvinciaRepository Provincias { get; set; }
             public IDistritoRepository Distritos { get; set; }
             public IUsuarioRepository Usuarios { get; set; }
             public IAlumnoRepository Alumnos { get; set; }
             public ISedeRepository Sedes { get; set; }
             public IPromotorRepository Promotores { get; set; }
-        }
+            public INivelRepository Niveles { get; set; }
+            public IAulaRepository Aulas { get; set; }
+            public ICursosRepository Cursos { get; set; }
+    }
     
 }
