@@ -139,6 +139,7 @@
     <Compile Include="Controllers\CicloController.cs" />
     <Compile Include="Controllers\DocenteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PeriodoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,6 +147,7 @@
     <Compile Include="ViewModels\AlumnoVM.cs" />
     <Compile Include="ViewModels\CicloVM.cs" />
     <Compile Include="ViewModels\DocenteVM.cs" />
+    <Compile Include="ViewModels\PeriodoVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -212,6 +214,7 @@
     <Content Include="Views\Alumno\Index.cshtml" />
     <Content Include="Views\Ciclo\Index.cshtml" />
     <Content Include="Views\Docente\Index.cshtml" />
+    <Content Include="Views\Periodo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

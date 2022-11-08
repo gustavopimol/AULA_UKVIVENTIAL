@@ -50,6 +50,7 @@
     <Compile Include="IDistritoRepository.cs" />
     <Compile Include="IDocenteRepository.cs" />
     <Compile Include="INivelRepository.cs" />
+    <Compile Include="IPeriodoRepository.cs" />
     <Compile Include="IPromotorRepository.cs" />
     <Compile Include="IProvinciaRepository.cs" />
     <Compile Include="ISedeRepository.cs" />
