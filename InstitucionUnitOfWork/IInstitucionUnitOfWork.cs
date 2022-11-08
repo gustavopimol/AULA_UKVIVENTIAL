@@ -18,6 +18,7 @@ namespace InstitucionUnitOfWork
         IProvinciaRepository Provincias { get; set; }
         IDistritoRepository Distritos { get; set; }
         IPromotorRepository Promotores { get; set; }
+        IPeriodoRepository Periodos { get; set; }
         ICicloRepository Ciclos { get; set; }
         ICursosRepository Cursos { get; set; }
         INivelRepository Niveles { get; set; } 

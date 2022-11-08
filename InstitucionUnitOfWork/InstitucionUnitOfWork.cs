@@ -18,6 +18,7 @@ namespace InstitucionUnitOfWork
                 Departamentos = new DepartamentoRepository();
                 Sedes = new SedeRepository();
                 Provincias = new ProvinciaRepository();
+                Periodos = new PeriodoRepository();
                 Distritos = new DistritoRepository();
                 Promotores = new PromotorRepository();
                 Ciclos = new CicloRepository();
@@ -33,6 +34,7 @@ namespace InstitucionUnitOfWork
             public IAlumnoRepository Alumnos { get; set; }
             public ISedeRepository Sedes { get; set; }
             public IPromotorRepository Promotores { get; set; }
+            public IPeriodoRepository Periodos { get; set; }
             public INivelRepository Niveles { get; set; }
             public IAulaRepository Aulas { get; set; }
             public ICursosRepository Cursos { get; set; }

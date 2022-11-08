@@ -73,63 +73,71 @@
                     );
                 });
 
-                if ($("#txtrol").val() == 'Administrador') {
-                    $("#periodoTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["excel", "pdf", "print", "colvis"]
-                    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Supervisor') {
-                    $("#periodoTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["excel", "pdf", "print", "colvis"]
-                    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Partner') {
-                    $("#periodoTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["colvis"]
-                    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Partner sin Ventas') {
-                    $("#periodoTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["colvis"]
-                    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
-                }
-                if ($("#txtrol").val() == 'Profesor') {
-                    $("#periodoTable").DataTable({
-                        "responsive": true,
-                        "lengthChange": true,
-                        "autoWidth": false,
-                        "scrollCollapse": true,
-                        "scrollX": true,
-                        "colReorder": true,
-                        "buttons": ["colvis"]
-                    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
-                }
+                //if ($("#txtrol").val() == 'Administrador') {
+                //    $("#periodoTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["excel", "pdf", "print", "colvis"]
+                //    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Supervisor') {
+                //    $("#periodoTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["excel", "pdf", "print", "colvis"]
+                //    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Partner') {
+                //    $("#periodoTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["colvis"]
+                //    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Partner sin Ventas') {
+                //    $("#periodoTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["colvis"]
+                //    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
+                //}
+                //if ($("#txtrol").val() == 'Profesor') {
+                //    $("#periodoTable").DataTable({
+                //        "responsive": true,
+                //        "lengthChange": true,
+                //        "autoWidth": false,
+                //        "scrollCollapse": true,
+                //        "scrollX": true,
+                //        "colReorder": true,
+                //        "buttons": ["colvis"]
+                //    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
+                //}
 
-                
+                $("#periodoTable").DataTable({
+                        "responsive": true,
+                        "lengthChange": true,
+                        "autoWidth": false,
+                        "scrollCollapse": true,
+                        "scrollX": true,
+                        "colReorder": true,
+                        "buttons": ["colvis"]
+                    }).buttons().container().appendTo('#periodoTable_wrapper .col-md-6:eq(0)');
 
                 $("#nuevoPeriodo").modal("hide");
             },

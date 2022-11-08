@@ -55,6 +55,7 @@
     <Compile Include="DistritoRepository.cs" />
     <Compile Include="DocenteRepository.cs" />
     <Compile Include="NivelRepository.cs" />
+    <Compile Include="PeriodoRepository.cs" />
     <Compile Include="PromotorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvinciaRepository.cs" />
